@@ -1,4 +1,5 @@
 const asyncHandler = require("../middleware/asyncHandler");
+const Task = require("../models/Task");
 
 exports.getAllTasks = asyncHandler(async (req, res) => {
   const tasks = await Task.find().sort({ createdAt: -1 });
